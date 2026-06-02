@@ -165,6 +165,10 @@ function appendHistory(string $name, $value): void
 
 // --- MODE: Baca Relay ---
 if (isset($_GET['relay'])) {
+    // Mengambil parameter relay dari URL.
+// Contoh: iot.php?relay=1
+// Nilai relay digunakan untuk menentukan relay mana yang akan dibaca dari Firebase.
+$relayNum = (int) $_GET['relay'];
 
     // HAPUS SEMUA OUTPUT BUFFER
     while (ob_get_level()) {
@@ -199,6 +203,10 @@ if (isset($_GET['relay'])) {
 // --- MODE: Tulis Data Sensor ---
 if (isset($_GET['data'])) {
     $parsed = parseData($_GET['data']);
+// Mengambil data sensor yang dikirim melalui URL.
+// Contoh: iot.php?data=suhu:27.5
+// Data kemudian diproses dan dikirim ke Firebase.
+$parsed = parseData($_GET['data']);
 
     if (!$parsed) {
         http_response_code(400);
