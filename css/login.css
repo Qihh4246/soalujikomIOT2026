@@ -39,7 +39,8 @@
 .login-form input:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 4px rgba(79,70,229,.12);
-  background: #fff;
+  background: rgba(255,255,255,.95);
+backdrop-filter: blur(10px);
 }
 .form-row {
   display: flex; align-items: center; justify-content: space-between;
@@ -114,4 +115,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+.login-wrapper {
+  transition: transform .25s ease;
+}
+
+.login-wrapper:hover {
+  transform: translateY(-4px);
 }
