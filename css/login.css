@@ -101,3 +101,17 @@
   .login-art { display: none; }
   .login-card { padding: 36px 28px; }
 }
+.login-wrapper {
+  animation: fadeUp .5s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
