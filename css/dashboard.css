@@ -367,3 +367,42 @@ canvas{
 .badge-pill.ok   { background: #dcfce7; color: #15803d; }
 .badge-pill.warn { background: #fef9c3; color: #a16207; }
 .badge-pill.err  { background: #fee2e2; color: #b91c1c; }
+/* ===== Smooth Animation ===== */
+.stat-card,
+.panel,
+.status-pill {
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.panel:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== Scrollbar Modern ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* ===== Table Hover ===== */
+.data-table tbody tr:hover {
+  background: #f9fafb;
+  transition: 0.2s;
+}
