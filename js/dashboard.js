@@ -39,7 +39,17 @@ function updateStats(data) {
   if (trendSuhu && suhu !== '--') {
     trendSuhu.textContent = suhu > 35 ? '↑ Panas!' : suhu > 28 ? '↑ Normal' : '↓ Dingin';
     trendSuhu.className = 'trend ' + (suhu > 35 ? 'down' : 'up');
-  }
+  // Relay otomatis berdasarkan suhu
+if (data.suhu > 30) {
+    set(ref(db, 'relay/1'), 1);
+} else {
+    set(ref(db, 'relay/1'), 0);
+}// Relay otomatis berdasarkan cahaya
+if (data.cahaya < 100) {
+    set(ref(db, 'relay/1'), 1);
+} else {
+    set(ref(db, 'relay/1'), 0);
+}}
 
   // Cahaya
   const cahaya = data.cahaya ?? '--';
